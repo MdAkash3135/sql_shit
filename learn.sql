@@ -11,3 +11,11 @@ values
 
 
 select * from employees
+
+select avg(salary) from employees
+
+
+select emp_name 
+from employees
+where salary > (select avg(salary) from employees)
+
