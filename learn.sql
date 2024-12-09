@@ -19,3 +19,8 @@ select emp_name
 from employees
 where salary > (select avg(salary) from employees)
 
+
+with average_table (salary)  as (select avg(salary) from employees)
+select emp_name 
+from employees, average_table
+where employees.salary > average_table.salary
